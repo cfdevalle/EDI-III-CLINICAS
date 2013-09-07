@@ -1,7 +1,10 @@
  function irA(cod){
                 var urls= new Array(10);
-                urls[0]="/php/instalaciones.html";
-        	urls[1]="/php/turnos.html"
+                urls[0]="php/instalaciones.php";
+        	urls[1]="php/turnos.php";
+                urls[2]="php/portada.php";
+                urls[3]="php/consultar.php";
+                urls[4]="php/profesionales.php";
        
         	
                 $("#div_screen").load(urls[cod]);

@@ -17,7 +17,7 @@
                                 
                                 
                             </div>
-                            <div class="span9" id="div_screen">contenido</div>
+                            <div class="span9" id="div_screen">portada</div>
                         </div>
                         
                         
