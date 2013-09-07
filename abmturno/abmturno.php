@@ -1,7 +1,7 @@
 <HTML>
 <HEAD>
 	<TITLE>Turnos</TITLE>
-	<link href="../css/abmturno.css" rel='stylesheet' type='text/css'>
+	<link href="../static/css/abmturno.css" rel='stylesheet' type='text/css'>
 </HEAD>
 <BODY>
 <?PHP
