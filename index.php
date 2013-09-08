@@ -4,7 +4,7 @@
 <title>Clinicas</title>
 <?php include("includes/metas.php")?>
 </head>
-<body>
+<body  style="background-image:url(static/img/fondo.jpg)">
 	<div id="contenedor">
             <div id="cabecera"><?php include("includes/cabecera.php")?></div>
 		
@@ -25,7 +25,7 @@
                 </div>
 	
 	</div>
-        </div>
+       
 	</body> 
 
 </html>
