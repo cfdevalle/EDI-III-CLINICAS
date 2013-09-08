@@ -15,13 +15,14 @@
 		<TABLE>
 			<TR>
 				<TD>Usuario</TD>
-				<TD><INPUT name="txt_user" type="text"></TD>
+				<TD style="width: 30px;"><INPUT name="txt_user" type="text"></TD>
 			</TR>
 			<TR>
 				<TD>Clave</TD>
-				<TD><INPUT name="txt_pass" type="password"></TD>
+				<TD style="width: 30px;"><INPUT name="txt_pass" type="password"></TD>
 			</TR>
 			<TR>
+                            
 				<TD><INPUT type="submit" value="Ingresar"></TD>
 				<TD><INPUT type="reset" value="Borrar"></TD>
 			</TR>
