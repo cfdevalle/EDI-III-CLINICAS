@@ -51,6 +51,8 @@ class tablaHorario{
 		$auxStr="";
 		echo("<TABLE><TR>
 			<TH></TH>
+			<TH>HS</TH>
+			<TH></TH>
 			<TH>Domingo</TH>
 			<TH></TH>
 			<TH>Lunes</TH>
@@ -68,46 +70,39 @@ class tablaHorario{
 			</TR></TABLE>");
 			
 			
-		for ($i=0;$i<7;$i++){
-			$dia=$i+1;
-			echo('<DIV id="dia'.($dia).'" class="columna">');
-			$hsInicial= new DateTime('2013-09-'.$dia.' 12:00:00');
-		
-			
-			for ($j=0;$j<24;$j++){
-				if ($j==0){
-					
-					echo($hsInicial->format('H:i'));
-				}else{
-					$hsInicial->add(new DateInterval('PT0H15M0S'));
-					$libre=true;
-					for ($k=0;$k<sizeof($vec);$k++){
-						//echo($hsInicial->format('Y-m-d H:i:s')."  ".$vec[$k]["fecha"]);
-						
-						if ($hsInicial->format('Y-m-d H:i:s')==$vec[$k]["fecha"]){
-							//$auxStr="<BR>".$hsInicial->format('H:i').$vec[$k]["nombre"]." ".$vec[$k]["apellido"];
-							//echo("<BR>".$hsInicial->format('H:i').$vec[$k]["nombre"]." ".$vec[$k]["apellido"]);
-							echo("<BR>".$vec[$k]["nombre"]." ".$vec[$k]["apellido"]);
-							$libre=false;
-						}else{
-							//echo("<BR>".$hsInicial->format('H:i')." libre");
-						}	
+		for ($i=0;$i<8;$i++){
+			if ($i==0){
+				$auxHs=new DateTime('12:00:00');
+				echo("<DIV class=\"columna\">");
+					for ($x=0;$x<24;$x++){
+						echo($auxHs->format('H:i')."</BR>");
+						$auxHs->add(new DateInterval('PT0H15M0S'));
 					}
-					if ($libre)
-							//echo("<BR><A id=\"".$hsInicial->format('Y-m-d H:i:s')."\"href=#>".$hsInicial->format('H:i')." libre</A>");
-							echo("<BR><A id=\"".$hsInicial->format('Y-m-d H:i:s')."\"href=#>Libre</A>");
-					//echo($auxStr);
-					//echo("<BR>".$hsInicial->format('H:i'));
+				echo("</DIV>");
+			}else{
+				$dia=$i;
+				echo('<DIV id="dia'.($dia).'" class="columna">');
+				$hsInicial= new DateTime('2013-09-'.$dia.' 12:00:00');
+				for ($j=0;$j<24;$j++){
+					
+						
+						$libre=true;
+						for ($k=0;$k<sizeof($vec);$k++){
+							if ($hsInicial->format('Y-m-d H:i:s')==$vec[$k]["fecha"]){
+								echo($vec[$k]["nombre"]." ".$vec[$k]["apellido"]."</BR>");
+								$libre=false;
+							}else{
+							}	
+						}
+						if ($libre){
+							echo("<A id=\"".$hsInicial->format('Y-m-d H:i:s')."\"href=#>Libre</A><BR>");
+						}
+					$hsInicial->add(new DateInterval('PT0H15M0S'));
 				}
+				//$hsInicial->add(new DateInterval('PT0H15M0S'));
+				echo("</DIV>");
 			}
-			//$hsInicial->add(new DateInterval('PT0H15M0S'));
-			echo("</DIV>");
 		}
-		//echo("</TABLE>");
-		
-		/*for ($i=0;$i<sizeof($vec);$i++){
-			echo $vec[$i]['fecha']." ".$vec[$i]['nombre']." ".$vec[$i]['apellido']." </BR>";
-		}*/
 	}
 }
 	
