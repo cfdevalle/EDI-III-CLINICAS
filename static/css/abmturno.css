@@ -3,5 +3,27 @@ body{
 }
 .columna{
 	border:2px solid #666;
+	width:110px;
 	float:left;
 }
+.columnaHs{
+	border:2px solid #666;
+	width:45px;
+	float:left;
+}
+
+#cabecera{ height:18% ;  }
+#contenido { height: 80%}
+#contenedor{width:900px; height:600px; margin:1% auto;
+	position:relative;
+}
+
+#frontContainer{width:900px;margin:1% auto; position:absolute; z-index:2;}
+#backContainer{width:900px;height:600px;margin:1% auto; background:url('../../static/img/pxTrans.png'); position:absolute; z-index:1;}
+
+.centrado{
+	
+	margin-left:45%;
+	margin-top:20%;
+}
+

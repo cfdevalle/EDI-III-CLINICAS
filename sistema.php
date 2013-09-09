@@ -53,6 +53,18 @@
                                 document.getElementById("frm_login").submit();
                         }	
         }
+        function checkKey(key){
+			var unicode
+			if (key.charCode)
+				{unicode=key.charCode;}
+			else
+				{unicode=key.keyCode;}
+			//alert(unicode); // Para saber que codigo de tecla presiono , descomentar
+	 
+			if (unicode == 13){
+				validar();
+			}
+		}
         </script>
         <br/>
 	<fieldset>
@@ -66,7 +78,7 @@
                                 </tr>
                                 <tr>
                                         <td>Password</td>
-                                        <td><input type="password" name="txt_password" id="txt_password" autocomplete="off"></td>
+                                        <td><input type="password" name="txt_password" id="txt_password" autocomplete="off" onkeypress="checkKey(event);"></td>
                                         <td><div id="div_mensaje_password"/></td>
                                 </tr>
                                 <tr>

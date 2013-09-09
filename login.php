@@ -17,7 +17,7 @@
 		
 		$result=consulta("SELECT * FROM usuario WHERE usuario.usuario='".$usuario->getUsuario()."' AND usuario.password='".$usuario->getPassword()."'");
 		$num_rows = mysql_num_rows($result);
-		
+		//echo("SELECT * FROM usuario WHERE usuario.usuario='".$usuario->getUsuario()."' AND usuario.password='".$usuario->getPassword()."'");
 		if ($num_rows==1){
 			header("Location: abmturno/abmTurno.php");
 		}else{

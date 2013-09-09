@@ -1,8 +1,6 @@
 <?PHP
 	class CollectionTurnos{	
-	
-	
-	
+
 	public function getTurnos($usuario){
 		$vec=array();
 		$i=0;

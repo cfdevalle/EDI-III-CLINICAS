@@ -4,10 +4,12 @@ DELETE FROM usuario;
 DELETE FROM consultorio;
 
 
-INSERT INTO usuario(usuario,password,nombre,apellido,rol) VALUES ("admin","admin1234","Maria","Recepci&oacute;n","admin");
+INSERT INTO usuario(usuario,password,nombre,apellido,rol) VALUES ("adminis","admin1234","Maria","Recepci&oacute;n","admin");
 
 INSERT INTO usuario(usuario,password,nombre,apellido,rol) VALUES ("jlopez","lopezj","Juan","Lopez","doc");
 INSERT INTO usuario(usuario,password,nombre,apellido,rol) VALUES ("jgarcia","garciaj","Jose","Garcia","doc");
+INSERT INTO usuario(usuario,password,nombre,apellido,rol) VALUES ("framirez","ramirezf","Fabian","Ramirez","doc");
+INSERT INTO usuario(usuario,password,nombre,apellido,rol) VALUES ("fmendez","mendezf","Fernanda","Mendez","doc");
 
 INSERT INTO paciente(id_paciente,nombre,apellido) VALUES (1,"Nicolas","Callejas");
 INSERT INTO paciente(id_paciente,nombre,apellido) VALUES (2,"Vanesa","Caceres");
