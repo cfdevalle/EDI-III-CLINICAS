@@ -14,10 +14,8 @@
                         <div class="row-fluid">
                             <div class="span3">
                                 <?php include("includes/menu.php")?>
-                                
-                                
                             </div>
-                            <div class="span9" id="div_screen">portada</div>
+                            <div class="span9" id="div_screen"><?php include("php/portada.php")?></div>
                         </div>
                         
                         

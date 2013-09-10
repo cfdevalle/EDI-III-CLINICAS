@@ -1,7 +1,7 @@
 <div class="well">
  <div class="row-fluid">
-               <div class="span7"><h3>Clinica De Atencion Medica NFSS</h3><img src="static/img/clinica2.jpg"/></div>
-			<div class="span5" >
+               <div class="span6"><h3>Clinica De Atencion Medica NFSS</h3><img src="static/img/doctor4.jpg"/></div>
+			<div class="span6" >
                                         
 					<?php include("sistema.php")?>
 									
