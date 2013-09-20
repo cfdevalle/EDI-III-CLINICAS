@@ -39,11 +39,10 @@ class tablaHorario{
 							}	
 						}
 						if ($libre){
-							echo("<DIV id=\"fila\"><A id=\"".$hsInicial->format('Y-m-d H:i:s')."\" href=# onClick=\"altaTurno();\">Libre</A></DIV>");
+							echo("<DIV id=\"fila\"><A id=\"".$hsInicial->format('d-m-Y H:i:s')."\" href=# onClick=\"abrirCarga(this);\">Libre</A></DIV>");
 						}
 					$hsInicial->add(new DateInterval('PT0H15M0S'));
 				}
-				//$hsInicial->add(new DateInterval('PT0H15M0S'));
 				echo("</DIV>");
 			}
 		}

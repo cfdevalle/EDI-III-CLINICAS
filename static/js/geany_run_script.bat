@@ -1,4 +1,4 @@
-php "abmturno.php"
+./abmturno
 
 pause
 del "%0"

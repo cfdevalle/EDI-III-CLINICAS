@@ -5,8 +5,13 @@
     <link type="text/css" rel="stylesheet" href="../static/css/bootstrap-responsive.css"/>
     <link type="text/css" rel="stylesheet" href="../static/css/bootstrap.css"/>
     <link type="text/css" rel="stylesheet" href="../static/css/abmturno.css"/>
-    
+ 
     <SCRIPT language= "JavaScript"type= "text/javascript" src="../static/js/abmturno.js"></SCRIPT>
+    <SCRIPT language= "JavaScript"type= "text/javascript" src="../static/js/jquery-1.5.js"></SCRIPT>
+    <SCRIPT language= "JavaScript"type= "text/javascript" src="../static/js/jquery-ui.min.js"></SCRIPT>
+
+    
+    
 </HEAD>
 
     
@@ -33,15 +38,19 @@
                                         include '../domain/Turno.php';
                                         include '../collection/CollectionTurnos.php';
                                         include "../collection/CollectionUsuarios.php";
+                                        include '../collection/CollectionConsultorios.php';
+                                        include "../collection/CollectionPacientes.php";
                                         include '../domain/DataBaseConnector.php';
                                         include '../domain/TablaHorario.php';
-									
+										
+										$collectionP=new CollectionPacientes();
+										$collectionC=new CollectionConsultorios();
 										$collectionU=new CollectionUsuarios();
                                         $db=new DataBaseConnector();
                                         $collectionT=new CollectionTurnos();
                                         $tabla=new TablaHorario();
 
-                                        $db->conectar();
+                                        
                                 ?>
                                 <DIV class="span12">
 									<FORM id="formProf">
@@ -49,7 +58,7 @@
 											<TR>
 												<TD>Profesional</TD>
 												<TD>
-													<?PHP $collectionU->getComboProfesionales("usuario","combo"); ?>
+													<?PHP $collectionU->getComboProfesionales("comboUsuario","combo"); ?>
 												</TD>
 												<TD><INPUT type="button" value="Enviar" onClick="enviar();"></TD>
 											</TR>
@@ -74,8 +83,37 @@
            </DIV><!--front-->
            <DIV id="backContainer">
 			   <DIV class="centrado">
-					<P>Prueba</P>
-					<INPUT type="button" value="Cancelar" onClick="backAtras();">
+					<DIV id="alta">
+						<TABLE class="tablaAltaTurno">
+							<TR>
+								<TD><H3 id="txt_fecha"></H3></TD>
+							</TR>
+							<TR>
+								<TD><H3 id="txt_usuario" ><?PHP if (!(empty($_GET['usuario']))) echo($_GET["usuario"])?></H3></TD>
+								<TD><?PHP $collectionC->getComboConsultorios("comboConsultorios","combo"); ?></TD>
+							</TR>
+							<TR>
+								<TD><H3>Datos del paciente</H3></TD>
+							</TR>
+							<TR>
+								<TD>Historia Clinica</TD>
+								<TD><INPUT id="txt_pacienteId" name="txt_pacienteId"></TD>
+							</TR>
+							<TR>
+								<TD >nombre</TD>
+								<TD><INPUT id="txt_pacienteNombre" name="txt_pacienteNombre"></TD>
+							</TR>
+							<TR>
+								<TD>apellido</TD>
+								<TD><INPUT id="txt_pacienteApellido" name="txt_pacienteApellido"></TD>
+								<TD><INPUT class="btn btn-primary"type="button" value="Buscar" onClick="buscarPaciente();"></TD>
+							</TR>
+							<TR>
+								<TD><INPUT class="btn btn-primary"type="button" value="Aceptar" onClick="altaTurno();"><INPUT class="btn"type="button" value="Cancelar" onClick="backAtras();"></TD>
+							</TR>
+						</TABLE>
+						
+					</DIV>
 			   </DIV>
            </DIV>	
 			

@@ -5,9 +5,11 @@
 		$vec=array();
 		$i=0;
 		$j=0;
-		 
-		$consulta='select t.fecha, p.nombre,p.apellido FROM turno t, paciente p WHERE usuario="'.$usuario.'" AND t.id_paciente=p.id_paciente ORDER BY t.fecha ASC';//.$usaurio;
+		$db=new DataBaseConnector();
+		$db->conectar();
+		$consulta='select t.fecha, p.nombre,p.apellido,u.horarios FROM turno t, paciente p,usuario u WHERE t.usuario="'.$usuario.'" AND u.usuario="'.$usuario.'" AND t.id_paciente=p.id_paciente ORDER BY t.fecha ASC';//.$usaurio;
 		$result=mysql_query($consulta);
+		$db->desconectar();
 		if (false === $result) {
 			echo mysql_error();
 		}
