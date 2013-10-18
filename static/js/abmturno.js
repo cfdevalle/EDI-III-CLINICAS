@@ -36,7 +36,8 @@ function buscarPaciente(){
 	id=document.getElementById("txt_pacienteId").value;
 	nombre=document.getElementById("txt_pacienteNombre").value;
 	apellido=document.getElementById("txt_pacienteApellido").value;
-	$.post( "buscarpacientes/buscarpacientes.php",{idPaciente:id,nombrePaciente:nombre,apellidoPaciente:apellido},function(respuesta){
+	$.post( "buscarpacientes/buscarpacientes.php",{idPaciente:id,nombrePaciente:nombre,apellidoPaciente:apellido},
+	function(respuesta){
 		console.log("respeusta: "+respuesta);
 	});
 }
