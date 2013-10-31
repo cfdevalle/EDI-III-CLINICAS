@@ -12,7 +12,7 @@ function abrirCarga(hora){
 }
 
 function backAtras(){
-	//console.log("back atras");
+	console.log("back atras");
 	document.getElementById("backContainer").style.zIndex="1";
 }
 function cambiarInput(opcion){
@@ -24,20 +24,8 @@ function cambiarInput(opcion){
 function altaTurno(){
 	respuesta="";
 	//relocate('/altaturno/altaturno.php',{'var1':'hola','var2':'Mundo'});
-	id=document.getElementById("txt_pacienteId").value;
-	nombre=document.getElementById("txt_pacienteNombre").value;
-	apellido=document.getElementById("txt_pacienteApellido").value;
-	$.post( "altaturno/altaturno.php",{idPaciente:id,nombrePaciente:nombre,apellidoPaciente:apellido},function(respuesta){
-		console.log("respeusta: "+respuesta);
-	});
-	
-}
-function buscarPaciente(){ 
-	id=document.getElementById("txt_pacienteId").value;
-	nombre=document.getElementById("txt_pacienteNombre").value;
-	apellido=document.getElementById("txt_pacienteApellido").value;
-	$.post( "buscarpacientes/buscarpacientes.php",{idPaciente:id,nombrePaciente:nombre,apellidoPaciente:apellido},
-	function(respuesta){
-		console.log("respeusta: "+respuesta);
-	});
+	$.post( "altaturno/altaturno.php",{var1:"contenido1",var2:"contenido"},function(respuesta){
+//respuesta es el resultado que devuelve nuestro archivo que recibe las variables
+});
+	alert(respuesta);
 }

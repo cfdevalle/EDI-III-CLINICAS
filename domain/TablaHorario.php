@@ -43,6 +43,7 @@ class tablaHorario{
 						}
 					$hsInicial->add(new DateInterval('PT0H15M0S'));
 				}
+				//$hsInicial->add(new DateInterval('PT0H15M0S'));
 				echo("</DIV>");
 			}
 		}

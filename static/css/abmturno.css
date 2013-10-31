@@ -11,9 +11,6 @@ body{
 	width:45px;
 	float:left;
 }
-.combo{
-	margin:0;
-}
 
 #cabecera{ height:18% ;  }
 #contenido { height: 80%}
@@ -22,17 +19,17 @@ body{
 }
 
 #frontContainer{width:900px;height:725px;background:#F5F5F5;margin:1% auto; position:absolute; z-index:2;}
-#backContainer{width:900px;height:725px;margin:1% auto; background:url('../../static/img/pxTrans.png'); position:absolute; z-index:1;}
+#backContainer{width:900px;height:725px;margin:1% auto;
+/* background:url('../../static/img/pxTrans.png');*/
+background:#ccc;
+ position:absolute; z-index:1;}
 
 #alta{
 	
 }
 
 .centrado{
-	margin:3%;
-	padding:2%;
-	background:#666;
+	margin-left:25%;
+	margin-top:5%;
 }
-.tablaAltaTurno{
-	color:#FFF;
-}
+

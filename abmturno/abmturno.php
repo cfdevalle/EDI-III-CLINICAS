@@ -50,7 +50,7 @@
                                         $collectionT=new CollectionTurnos();
                                         $tabla=new TablaHorario();
 
-                                        
+                                        $db->conectar();
                                 ?>
                                 <DIV class="span12">
 									<FORM id="formProf">
@@ -84,30 +84,25 @@
            <DIV id="backContainer">
 			   <DIV class="centrado">
 					<DIV id="alta">
-						<TABLE class="tablaAltaTurno">
+						<TABLE class="alta">
 							<TR>
-								<TD><H3 id="txt_fecha"></H3></TD>
+								<TD><H3 id="txt_fecha" style="color:#FFF;"></H3></TD>
 							</TR>
 							<TR>
-								<TD><H3 id="txt_usuario" ><?PHP if (!(empty($_GET['usuario']))) echo($_GET["usuario"])?></H3></TD>
+								<TD><H3 id="txt_usuario" style="color:#FFF;"><?PHP if (!(empty($_GET['usuario']))) echo($_GET["usuario"])?></H3></TD>
+							</TR>	
+							<TR>
 								<TD><?PHP $collectionC->getComboConsultorios("comboConsultorios","combo"); ?></TD>
 							</TR>
 							<TR>
-								<TD><H3>Datos del paciente</H3></TD>
+								<TD>Apellido</TD>
+								<TD>Nombre</TD>
 							</TR>
 							<TR>
-								<TD>Historia Clinica</TD>
-								<TD><INPUT id="txt_pacienteId" name="txt_pacienteId"></TD>
+								<TD><INPUT id="txt_paciente_apellido"></TD>
+								<TD><INPUT id="txt_paciente_nombre"></TD>
 							</TR>
-							<TR>
-								<TD >nombre</TD>
-								<TD><INPUT id="txt_pacienteNombre" name="txt_pacienteNombre"></TD>
-							</TR>
-							<TR>
-								<TD>apellido</TD>
-								<TD><INPUT id="txt_pacienteApellido" name="txt_pacienteApellido"></TD>
-								<TD><INPUT class="btn btn-primary"type="button" value="Buscar" onClick="buscarPaciente();"></TD>
-							</TR>
+							<!--TR><TD><?PHP $collectionP->getTablePacientes("comboPacientes","combo"); ?></TD></TR-->
 							<TR>
 								<TD><INPUT class="btn btn-primary"type="button" value="Aceptar" onClick="altaTurno();"><INPUT class="btn"type="button" value="Cancelar" onClick="backAtras();"></TD>
 							</TR>

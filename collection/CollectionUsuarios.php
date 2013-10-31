@@ -3,11 +3,8 @@ class CollectionUsuarios{
 	
 	public function getComboProfesionales($id,$class){
 		 //usuario,password,nombre,apellido,rol
-		$db=new DataBaseConnector();
-		$db->conectar();
 		$consulta='SELECT u.usuario,u.nombre,u.apellido FROM usuario u WHERE rol="doc" ORDER BY apellido ASC';
 		$result=mysql_query($consulta);
-		$db->desconectar();
 		if (false === $result) {
 			echo mysql_error();
 		}
