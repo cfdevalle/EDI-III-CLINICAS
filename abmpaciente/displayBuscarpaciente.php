@@ -1,16 +1,17 @@
 <script>
 		function borrar($id){
-			$.post( "abmBorrar.php",{id:$id},
+			console.log("id"+$id);
+			$.post( "abmpaciente/abmBorrar.php",{id:$id},
 		function(respuesta){
-				var url ="displayBuscarpaciente.php";
-                $("#contenido").load(url);
+				var url ="abmpaciente/displayBuscarpaciente.php";
+                $("#contenidopacientes").load(url);
 	})
 		}
 		function modificar($id){
-		$.post( "abmModificar.php",{id:$id},
+		$.post( "abmpaciente/abmModificar.php",{id:$id},
 		function(respuesta){
-				var url ="displayBuscarpaciente.php";
-                $("#contenido").load(url);
+				var url ="abmpaciente/displayBuscarpaciente.php";
+                $("#contenidopacientes").load(url);
 	})	
 			//console.log("nombre"+$nombre);
 		}
@@ -54,6 +55,7 @@
 	 
 	 $db->conectar();
 	 $generaGrilla->getTablePacientes($query);
+	 $db->desconectar();
 ?>
 	
 	

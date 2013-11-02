@@ -1,32 +1,33 @@
 
 		<script language="javascript" type="text/javascript">
 		function bu(){		
-				dni=document.getElementById('dni').value
-				nom=document.getElementById('nombre').value
+				nombre=document.getElementById('nombre').value
 				ap=document.getElementById('apellido').value
-				var url ="abmpaciente/displayBuscarpaciente.php?dni="+dni+"&nombre="+nom+"&apellido="+ap;
-                $("#contenidopacientes").load(url);
+				rol=document.getElementById('rol').value
+				var url ="abmusuario/displayBuscarUsuario.php?nombre="+nombre+"&apellido="+ap+"&rol="+rol;
+				console.log("ESTO ES LO QUE ENVIA"+url);
+                $("#contenidoUsuario").load(url);
 		}
 		function CargarAlta(){
-		 	  var url="abmpaciente/altas.php";
-			 $("#contenidopacientes").load(url);
+		 	  var url="abmUsuario/altasUsuario.php";
+			 $("#contenidoUsuario").load(url);
 		
 		}
 	</script>
 	
 
 
-	<h3> Buscar Paciente </h3>
+	<h3> Profesionales </h3>
 	<hr />
 	<div class="row-fluid">
 		<div class="span12">
 			<div class="well">
 				<table><tr>
-				<td>Dni<input type="text" id="dni" value=""/></td>
 				<td>Nombre<input type="text" id="nombre" value=""/></td>
 				<td>Apellido<input type="text" id="apellido" value=""/></td>
+				<td>Rol<input type="text" id="rol" value=""/></td>
 				<td><INPUT TYPE="button"  class="btn-primary"  value="Buscar" onClick="bu()"/></td>
-				<td> Dar De Un Paciente </td>
+				<td> Dar De Alta Un Medico </td>
 				<td><INPUT TYPE="button"  class="btn-primary"  value="Alta" onClick="CargarAlta()"/></td>
 				</tr>
 				</table>
@@ -37,7 +38,7 @@
 	<div class="row-fluid">
 		<div class="span12">
 			<div class="well">
-				<div id="contenidopacientes"></div>
+				<div id="contenidoUsuario"></div>
 				
 			</div>
 		</div>

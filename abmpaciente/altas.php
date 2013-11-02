@@ -1,10 +1,6 @@
 <HTML>
 <HEAD>
-	<SCRIPT language= "JavaScript"type= "text/javascript" src="../static/js/jquery-1.5.js"></SCRIPT>
-    <SCRIPT language= "JavaScript"type= "text/javascript" src="../static/js/jquery-ui.min.js"></SCRIPT>
-    <SCRIPT language= "JavaScript"type= "text/javascript" src="../static/js/abmpaciente.js"></SCRIPT>
-	<link type="text/css" rel="stylesheet" href="../static/css/bootstrap-responsive.css"/>
-	<link type="text/css" rel="stylesheet" href="../static/css/bootstrap.css"/>
+
 </HEAD>
 <BODY>
 <BODY>

@@ -52,10 +52,12 @@ var param={
 		dato:dato
 	};
 */
-	$.post( "abmAltas.php",{nombre:nom,apellido:ape,dni:dni,domicilio:dom,telefono:tele},
+	$.post( "abmpaciente/abmAltas.php",{nombre:nom,apellido:ape,dni:dni,domicilio:dom,telefono:tele},
 	function(respuesta){
 		//console.log("respeusta: "+respuesta);
-		var url ="displayBuscarpaciente.php";
-        $("#contenido").load(url);
+		var url ="abmpaciente/displayBuscarpaciente.php";
+        $("#contenidopacientes").load(url);
 	});
 }
+
+

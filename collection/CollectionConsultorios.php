@@ -3,8 +3,11 @@ class CollectionConsultorios{
 
 	public function getComboConsultorios($id,$class){
 		 //usuario,password,nombre,apellido,rol
+		$db=new DataBaseConnector();
+		$db->conectar();
 		$consulta='SELECT c.numero,c.nombre FROM consultorio c ORDER BY numero ASC';
 		$result=mysql_query($consulta);
+		$db->desconectar();
 		if (false === $result) {
 			echo mysql_error();
 		}
