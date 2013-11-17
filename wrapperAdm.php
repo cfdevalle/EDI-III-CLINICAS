@@ -1,3 +1,15 @@
+<?php 
+	
+	session_start();
+	
+	//echo $_SESSION['usuario'];
+	
+	
+	
+	
+	
+	
+?>
 <HTML>
 <HEAD>
 	<TITLE>Turnos</TITLE>
@@ -30,20 +42,28 @@
 		  <div class="row">
 		  	<div class="span12">		
     		<div class="well">
+						<ul class="nav pull-right">
+										<li>Bienvenido:<strong><?php echo $_SESSION['nombre'];echo(' ');echo $_SESSION['apellido']; ?></strong><br /></li>
+										<li>Usuario : <?php echo $_SESSION['usuario'];?></li>
+										<li><?php echo $_SESSION['rol'];?></li>
+										<li class="divider"><hr /></li>
+										<li style="text-align:right"><INPUT type="button" value="Cerrar Sesion" onClick="location='/EDII-III-CLINICAS/php/EliminarSesion.php';"/> </li>
+										
+										
+				    	</ul>
 						<ul class="nav nav-tabs">
-                                <li >
-                                    <a href="javascript:irA(5);">Nuevo Turno</a>
-                                </li>
-                                <li><a href="javascript:irA(6);">Pacientes </a></li>
-                                <li><a href="javascript:irA(7);">Medicos</a></li>
+                                <li><a href="javascript:irA(6);">Nuevas Secretarias</a></li>
+                                <li><a href="javascript:irA(7);">Nuevos Profesionales</a></li>
+								
                        </ul>
-                       <div  id="div_screen"></div>
+					   
+					   <div  id="div_screen"></div>
              </div>
 			 </div>
                         
                         
         </div>
      </div>
-	
+
 </body> 
 </HTML>

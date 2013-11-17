@@ -8,12 +8,10 @@
 	})
 		}
 		function modificar($id){
-		$.post( "abmpaciente/abmModificar.php",{id:$id},
-		function(respuesta){
-				var url ="abmpaciente/displayBuscarpaciente.php";
-                $("#contenidopacientes").load(url);
-	})	
-			//console.log("nombre"+$nombre);
+			 console.log("id"+$id);
+		 	 var url="abmpaciente/abmModificar.php?id="+$id;
+			 $("#contenidopacientes").load(url);
+	
 		}
 </script>
 <?php

@@ -46,7 +46,7 @@ function alta(){
 		}
 		
 }
-function enviarDato(nom,ape){
+function enviarDato(nom,ape,dni,dom,tele){
 /*	
 var param={
 		dato:dato
@@ -59,5 +59,39 @@ var param={
         $("#contenidopacientes").load(url);
 	});
 }
+
+
+/* modificaciones    ------------------------------------------------------------------------------------------------------------------------**/
+
+function modificar(){
+		
+		nom=document.getElementById('txt_nombre').value;
+		ape=document.getElementById('txt_apellido').value;
+		dni=    document.getElementById('txt_dni').value;
+		dom=    document.getElementById('txt_domicilio').value;
+		tele=	document.getElementById('txt_telefono').value;
+		
+		console.log(nom,ape,dni,dom,tele);
+			enviarDatoM(nom,ape,dni,dom,tele);
+			
+		
+		}
+		
+
+function enviarDatoM(nom,ape,dni,dom,tele){
+/*	
+var param={
+		dato:dato
+	};
+*/
+	$.post( "abmpaciente/abmModificar.php",{nombre:nom,apellido:ape,dni:dni,domicilio:dom,telefono:tele},
+	function(respuesta){
+		//console.log("respeusta: "+respuesta);
+		//var url ="abmpaciente/displayBuscarpaciente.php";
+        //$("#contenidopacientes").load(url);
+	});
+}
+
+
 
 

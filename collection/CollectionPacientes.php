@@ -25,10 +25,10 @@ class CollectionPacientes{
 			echo mysql_error();
 		}
 		echo("<Table class='table table-condensed' >");
-		echo("<tr class='info'><td>Legajo</td><td>Nombre</td><td>Apellido</td><td>Dni</td><td>Dirreccion</td><td>Telefono</td><td>Accion</td></tr>");
+		echo("<tr class='info'><td>Historia Clinica</td><td>Nombre</td><td>Apellido</td><td>Dni</td><td>Dirreccion</td><td>Telefono</td><td>Accion</td></tr>");
 		while($row = mysql_fetch_row($result)){
 				//echo('<TR><TD id="id_paciente">'.$row[0].'</TD><TD id="apellido">'.$row[2].'</TD><TD id="nombre">'.$row[1].'</TD></TR>');
-				echo('<TR><TD id="id">'.$row[0].'</TD><TD id="nombre">'.$row[1].'</TD><TD id="apellido">'.$row[2].'</TD><TD id="dni">'.$row[3].'</TD><TD id="direccion">'.$row[4].'</TD><TD id="telefono">'.$row[5].'</TD><TD><input type="button" value="Borrar" class="btn-primary" onclick="borrar('.$row[0].')" /> / <input type="button" value="Modificar" class="btn-primary" onclick="modificar('.$row[0].')" /></TD></TR>');
+				echo('<TR><TD id="id">'.$row[0].'</TD><TD id="nombre">'.$row[1].'</TD><TD id="apellido">'.$row[2].'</TD><TD id="dni">'.$row[3].'</TD><TD id="direccion">'.$row[4].'</TD><TD id="telefono">'.$row[5].'</TD><TD> <input type="button" value="Modificar" class="btn-primary" onclick="modificar('.$row[0].')" /></TD></TR>');
 		}
 		echo('</table>');
 	}
