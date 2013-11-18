@@ -1,35 +1,40 @@
 <?php
 	$response="";
 	
-	$id=0;
+	//$id=0;
 	include '../domain/DataBaseConnector.php';
 	$db=new DataBaseConnector();
-	if (!(empty($_POST['nombre']))||!(empty($_POST['apellido']))){
+	if (!(empty($_POST['usuario']))||!(empty($_POST['pass']))){
 		$usr=$_POST['usuario'];
-		$pass=$_POST['password'];
+		$pass=$_POST['pass'];
 		$nombre=$_POST['nombre'];
 		$apellido=$_POST['apellido'];
-		$rol=$_POST['rol'];
+		$tele=$_POST['telefono'];
+		$mail=$_POST['email'];
+		$direccion=$_POST['direc'];
+		
+		echo($usr);	
 	} 
 	
 	$db->conectar();
-	$c='SELECT id_usuario FROM usuario ORDER BY id_usuario DESC LIMIT 1';
+	/*$c='SELECT id_usuario FROM usuario ORDER BY id_usuario DESC LIMIT 1';
 
 	$result=mysql_query($c);
 	while($row = mysql_fetch_row($result)){
 		$id=(int)$row[0];
 	}
 	$id=$id+1;
-	$consulta="INSERT INTO usuario (id_usuario,usuario,password,nombre,apellido,rol) VALUES (".$id.", \"".$usr."\", \"".$pass."\",'".$nombre."',\"".$apellido."\",\"".$rol."\")";
+	*/
+	$consulta="INSERT INTO usuario (usuario,password,nombre,apellido,telefono,email,direccion) VALUES ('".$usr."', \"".$pass."\", \"".$nombre."\",'".$apellido."',\"".$tele."\",\"".$mail."\",'".$direccion."')";
 	echo("<p>".$consulta."</p>");
 	$result=mysql_query($consulta);
 	
 	if (false === $result) {
 		$response=mysql_error();
 	}else{
-		$response="Se inserto: ".$id;
+		$response="Se inserto: ".$usr;
 	}
-	
+	header("location: ../wrapperAdm.php");
 	$db->desconectar();
-	//echo $response;
+	//echo $response;*/
 ?>

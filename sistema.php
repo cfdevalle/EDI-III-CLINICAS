@@ -1,15 +1,9 @@
-<HTML>
-<HEAD>
-    <?php include("includes/metas.php")?>
+
     <script>
-        function ready(){
-            <?php 	$usr=$_GET['usr']; ?>
-        }
-    </script>
-</HEAD>
-<BODY onLoad="ready()">
+     
+   
+
 	
-        <script>
             function validar(){
                             var usuario=document.getElementById("txt_usuario").value,
                             password=document.getElementById("txt_password").value,
@@ -66,7 +60,7 @@
 			}
 		}
         </script>
-        <br/>
+       
 	<fieldset>
 	<legend>Plataforma</legend>
                 <form name="frm_login" id="frm_login" action="" method="post">
@@ -78,7 +72,7 @@
                                 </tr>
                                 <tr>
                                         <td>Password</td>
-                                        <td><input type="password" name="txt_password" id="txt_password" autocomplete="off" onkeypress="checkKey(event);"></td>
+                                        <td><input type="password" name="txt_password" id="txt_password" autocomplete="off" onKeyPress="checkKey(event);"></td>
                                         <td><div id="div_mensaje_password"/></td>
                                 </tr>
                                 <tr>
@@ -90,9 +84,11 @@
                                 </tr>
                                 <tr><div id="div_mensaje_notificacion">
                                                                         <?php 
+																			if(isset($_GET['usr'])){
+																				$usr=$_GET['usr'];		
                                                                                 if ($usr==='errorForUser'){
                                                                                     ?><p style="color:red">Usuario/password incorrectos o inexistentes </p>
-                                                                         <?php } ?>
+                                                                         <?php }} ?>
                                                                         
                                     </div>     
                                 </tr>
@@ -102,6 +98,4 @@
         </fieldset>
 	
     
-    
-</BODY>
-</HTML>
+

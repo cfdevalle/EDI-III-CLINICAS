@@ -29,7 +29,7 @@ if ($num_rows==1){
 			//$usuario->setEmail($row[4]);
 			//$usuario->setEmail($row[5]);
 			//$usuario->setDireccion($row[6]);
-			
+			$_SESSION['rolNoLogin']=$row[7];
 			$rol = $row[7];
 			$otorgaTurno = $row[8];
 			$_SESSION['rol']=$row[9];

@@ -1,7 +1,9 @@
 <script>
-		function borrar($id){
-					console.log("id"+$id);
-			$.post( "abmusuario/abmBorrarUsuario.php",{id:$id},
+		function borrar(id){
+			console.log("id"+id);
+			var url="abmusuario/abmBorrarUsuario.php?id="+id;
+			window.location.href = url
+		
 		function(respuesta){
 				var url ="abmusuario/displayBuscarUsuario.php";
                 $("#contenidoUsuario").load(url);
@@ -22,27 +24,33 @@
 	function buscarUsuario(){
 		
 		$response="";
-		$consulta="SELECT * FROM usuario";
+		$consulta="SELECT u.* ,r.rol FROM usuario u,usuario_rol r ";
 		
 		if (!(empty($_GET['nombre']))){
-			$consulta=$consulta." WHERE nombre=  '".$_GET["nombre"]."'";
+			$consulta=$consulta." WHERE u.nombre=  '".$_GET["nombre"]."' AND u.usuario=r.usuario";
 		}
 		if (!(empty($_GET['apellido']))){
-			if (strlen($consulta)<=22){
-				$consulta=$consulta." WHERE apellido=  \"".$_GET["apellido"]."\"";
+			if (strlen($consulta)<=49){
+				$consulta=$consulta." WHERE u.apellido= '".$_GET["apellido"]."' AND u.usuario=r.usuario";
 			}else{
-				$consulta=$consulta." AND apellido=  \"".$_GET["apellido"]."\"";
+				$consulta=$consulta." AND u.apellido=  '".$_GET["apellido"]."'";
 			}
 		}
 		if (!(empty($_GET['rol']))){
-			if (strlen($consulta)<=22){
-				$consulta=$consulta." WHERE rol	= \"".$_GET["rol"]."\"";
+			if (strlen($consulta)<=50){
+				$consulta=$consulta." WHERE r.rol	= \"".$_GET["rol"]."\" AND u.usuario=r.usuario";
 			}else{
-				$consulta=$consulta." AND rol =  \"".$_GET["rol"]."\"";
+				$consulta=$consulta." AND r.rol =  \"".$_GET["rol"]."\"";
 			}
 		}
+	
+		if ((empty($_GET['nombre']))&&(empty($_GET['apellido']))&&(empty($_GET['rol']))){			
+		$consulta=$consulta."WHERE u.usuario=r.usuario";
+		}
+			
+
 		
-		$consulta=$consulta." ORDER BY id_usuario ASC";
+		
 		return $consulta;
 	}
 	

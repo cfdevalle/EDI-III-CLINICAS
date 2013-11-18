@@ -1,7 +1,7 @@
 <?php 
 
-	if (!(empty($_POST['id']))){
-		$id=$_POST['id'];
+	if (!(empty($_GET['id']))){
+		$id=$_GET['id'];
 	
 	} 
 
@@ -14,4 +14,5 @@
 	
 	$result=mysql_query($query);
 	$db->desconectar();
+	//header("Location: ../wrapperAdm.php");
 ?>
