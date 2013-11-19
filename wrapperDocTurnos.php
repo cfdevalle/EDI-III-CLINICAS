@@ -52,9 +52,9 @@
 										
 				    	</ul>
 						<ul class="nav nav-tabs">
-                                <li><a href="javascript:irA(6);">Nuevo turno</a></li>
-                                <li><a href="javascript:irA(7);">Turnos Del Dia</a></li>
-								<li><a href="javascript:irA(7);">Pacientes</a></li>
+                                <li><a href="#">Nuevo turno</a></li>
+                                <li><a href="#">Turnos Del Dia</a></li>
+								<li><a href="javascript:irA(6);">Pacientes</a></li>
 								
                        </ul>
 					   

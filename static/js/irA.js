@@ -12,7 +12,10 @@
 				urls[8]="abmusuario/altasUsuario.php";
        			urls[9]="abmusuario/altasCargo.php";
 				urls[10]="abmusuario/AsignarCargo.php";
-        	
+        	    urls[11]="abmpaciente/altas.php";
+				
+				
+				
                 $("#div_screen").load(urls[cod]);
 				
             

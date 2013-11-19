@@ -1,36 +1,27 @@
-<HTML>
-<HEAD>
 
-</HEAD>
-<BODY>
-<BODY>
 
-	<h3> Altas de pacientes </h3>
-	<hr />
+	
 	
 				<table>
-					<tr><td><h4>Nombre</h4></td>
-					<td><INPUT TYPE="text" id="txt_nombre" /></td><td><div id="errorN"></div></td>
+				<form action="abmpaciente/abmAltas.php" method="post" id="formulario" name="cargo">
+					<tr><td><h5>Nombre</h5></td>
+					<td><INPUT TYPE="text" id="txt_nombre" name="nombre" /></td><td><div id="errorN"></div></td>
+					
+					<td><h5>Apellido</h5></td>
+					<td><INPUT TYPE="text" id="txt_apellido" name="apellido"/></td><td><div id="errorA"></div></td>
+						<td><h5>Dni </h5></td>
+					<td><INPUT TYPE="text" id="txt_dni" name="dni"/></td><td><div id="errorD"></div></td>
 					</tr>
 					<tr>
-					<td><h4>Apellido</h4></td>
-					<td><INPUT TYPE="text" id="txt_apellido"/></td><td><div id="errorA"></div></td>
-					</tr>
-					<tr><td><h4>Dni </h4></td>
-					<td><INPUT TYPE="text" id="txt_dni"/></td><td><div id="errorD"></div></td>
-					</tr>
-					<tr>
-					<td><h4>Domicilio</h4></td>
-					<td><INPUT TYPE="text" id="txt_domicilio" /></td><td><div id="errorDom"></div></td>
-					</tr>
-					<tr>
-					<td><h4>Telefono</h4></td>
-					<td><INPUT TYPE="text" id="txt_telefono" onKeyPress="checkKey(event);"/></td><td><div id="errorT"></div></td>
+					<td><h5>Direccion</h5></td>
+					<td><INPUT TYPE="text" id="txt_domicilio" name="domicilio" /></td><td><div id="errorDom"></div></td>
+					<td><h5>Telefono</h5></td>
+					<td><INPUT TYPE="text" id="txt_telefono" name="telefono" /></td><td><div id="errorT"></div></td>
+					<td><h5>Email</h5></td>
+					<td><INPUT TYPE="text" id="txt_email" name="email" /></td><td><div id="errorE"></div></td>
 					</tr>
 					<tr>
 					<td><INPUT TYPE="button"  class="btn-primary"  value="Alta" onClick="alta();"/></td><td><div id="error"></div></td>
 					</tr>
 				</table>
-	
-</BODY>
-</HTML>
+			</form>

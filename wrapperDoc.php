@@ -43,8 +43,8 @@
 										
 				    	</ul>
 						<ul class="nav nav-tabs">
-                                <li><a href="javascript:irA(6);">Turnos Del Dia</a></li>
-                                <li><a href="javascript:irA(7);">Busqueda de Pacientes</a></li>
+                                <li><a href="#">Turnos Del Dia</a></li>
+                                <li><a href="javascript:irA(6);">Busqueda de Pacientes</a></li>
                        </ul>
                        <div  id="div_screen"></div>
              </div>
@@ -53,15 +53,6 @@
                         
         </div>
      </div>
-<?php if(isset($_GET['ver'])){
-		if ($_GET['ver'] == 'pac'){?>
-		<script>
-			irA2(6);
-			
-		</script>
-		<?php
-		}
-}
-?>
+
 </body> 
 </HTML>

@@ -19,19 +19,21 @@ function alta(){
 		dni=    document.getElementById('txt_dni').value;
 		dom=    document.getElementById('txt_domicilio').value;
 		tele=	document.getElementById('txt_telefono').value;
+		email=	document.getElementById('txt_email').value;
 		
 		div_error= document.getElementById('error');
 		
-		mensaje_error = "<p style='color:red'>Debe Completar Todos los Campos</p>";
+		mensaje_error = "<p style='color:red'>Campos Incompletos</p>";
 		mensaje_error2 = "<p style='color:red'>*</p>";
 		
-		if (document.getElementById('txt_nombre').value == '' || document.getElementById('txt_apellido').value == '' || document.getElementById("txt_dni").value == '' || document.getElementById("txt_domicilio").value == '' || document.getElementById("txt_telefono").value == ''){
+		if (document.getElementById('txt_nombre').value == '' || document.getElementById('txt_apellido').value == '' || document.getElementById("txt_dni").value == '' || document.getElementById("txt_domicilio").value == '' || document.getElementById("txt_telefono").value == '' || document.getElementById("txt_email").value == ''){
 			div_error.innerHTML = mensaje_error;
 			if ( nom =="" ){document.getElementById('errorN').innerHTML = mensaje_error2;}else{document.getElementById('errorN').innerHTML = '';}
 			if (ape == ""){document.getElementById('errorA').innerHTML = mensaje_error2;}else{document.getElementById('errorA').innerHTML = '';}
 			if (dni == ""){document.getElementById('errorD').innerHTML = mensaje_error2;}else{document.getElementById('errorD').innerHTML = '';}
 			if (dom == ""){document.getElementById('errorDom').innerHTML = mensaje_error2;}else{document.getElementById('errorDom').innerHTML = '';}
 			if (tele == ""){document.getElementById('errorT').innerHTML = mensaje_error2;}else{document.getElementById('errorT').innerHTML = '';}
+			if (email == ""){document.getElementById('errorE').innerHTML = mensaje_error2;}else{document.getElementById('errorE').innerHTML = '';}
 		}else{
 			
 			div_error.innerHTML = '';
@@ -40,7 +42,10 @@ function alta(){
 			document.getElementById('errorD').innerHTML = '';
 			document.getElementById('errorDom').innerHTML = '';
 			document.getElementById('errorT').innerHTML = '';
-			enviarDato(nom,ape,dni,dom,tele);
+			document.getElementById('errorE').innerHTML = '';
+			form=document.getElementById('formulario');
+			form.submit();
+			//enviarDato(nom,ape,dni,dom,tele);
 			
 		
 		}

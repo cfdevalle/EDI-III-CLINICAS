@@ -138,7 +138,7 @@ if (isset($_POST['id'])){
 	$db->desconectar();
 	
 	
-	header("Location: ../wrapperDoc.php?ver=pac");
+	header("Location: ../wrapperSec.php?ver=pac");
 	
 	}
 	

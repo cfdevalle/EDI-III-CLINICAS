@@ -16,18 +16,16 @@
 	
 
 
-	<h3> Buscar Paciente </h3>
-	<hr />
+	
 	<div class="row-fluid">
 		<div class="span12">
 			<div class="well">
 				<table><tr>
-				<td style="width:20%">Dni<input type="text" id="dni" value=""/></td>
-				<td style="width:20%">Nombre<input type="text" id="nombre" value=""/></td>
-				<td style="width:20%">Apellido<input type="text" id="apellido" value=""/></td>
+				<td style="width:20%"><h5>Dni</h5><input type="text" id="dni" value=""/></td>
+				<td style="width:20%"><h5>Nombre</h5><input type="text" id="nombre" value=""/></td>
+				<td style="width:20%"><h5>Apellido</h5><input type="text" id="apellido" value=""/></td>
 				<td style="width:10%"><INPUT TYPE="button"  class="btn-primary"  value="Buscar" onClick="bu()"/></td>
-				<td style="width:25%">Nuevo Paciente</td>
-				<td style="width:5%"><INPUT TYPE="button"  class="btn-primary"  value="*" onClick="CargarAlta()"/></td>
+				
 				</tr>
 				</table>
 				

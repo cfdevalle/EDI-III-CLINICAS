@@ -11,6 +11,7 @@
 		$dni=$_POST['dni'];
 		$domicilio=$_POST['domicilio'];
 		$telefono=$_POST['telefono'];
+		$email=$_POST['email'];
 	} 
 	
 	$db->conectar();
@@ -21,8 +22,8 @@
 		$id=(int)$row[0];
 	}
 	$id=$id+1;
-	$consulta="INSERT INTO paciente (id_paciente,nombre,apellido,dni,direccion,telefono) VALUES (".$id.", \"".$nombre."\", \"".$apellido."\",'".$dni."',\"".$domicilio."\",\"".$telefono."\")";
-	echo("<p>".$consulta."</p>");
+	$consulta="INSERT INTO paciente (id_paciente,nombre,apellido,dni,direccion,telefono,email) VALUES (".$id.", \"".$nombre."\", \"".$apellido."\",'".$dni."',\"".$domicilio."\",\"".$telefono."\",\"".$email."\")";
+	//echo("<p>".$consulta."</p>");
 	$result=mysql_query($consulta);
 	//$db->desconectar();
 	if (false === $result) {
@@ -31,6 +32,6 @@
 		$response="Se inserto: ".$id;
 	}
 	
-	
+	header("location: ../wrapperSec.php");
 	//echo $response;
 ?>

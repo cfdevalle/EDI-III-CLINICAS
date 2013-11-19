@@ -53,7 +53,8 @@
 				    	</ul>
 						<ul class="nav nav-tabs">
                                 <li><a href="javascript:irA(6);">Asignar Turno</a></li>
-                                <li><a href="javascript:irA(7);">Nuevos paciente</a></li>
+                                <li><a href="javascript:irA(6);">Buscar Pacientes</a></li>
+								<li><a href="javascript:irA(11);">Nuevo Paciente</a></li>
 								
                        </ul>
 					   
@@ -64,6 +65,16 @@
                         
         </div>
      </div>
+	 <?php if(isset($_GET['ver'])){
+		if ($_GET['ver'] == 'pac'){?>
+		<script>
+			irA2(6);
+			
+		</script>
+		<?php
+		}
+}
+?>
 
 </body> 
 </HTML>
