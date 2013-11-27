@@ -14,6 +14,7 @@
 				urls[10]="abmusuario/AsignarCargo.php";
         	    urls[11]="abmpaciente/altas.php";
 				urls[12]="php/cambiarContr.php";
+				urls[13]="abmusuario/modDatosSesion.php";
 				
 				
 				
