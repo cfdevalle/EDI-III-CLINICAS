@@ -17,6 +17,7 @@
 		$dni = $row[3];
 		$direccion = $row[4];
 		$telefono = $row[5];
+		$email = $row[6];
 	}
 	$script="
 	<script>
@@ -28,6 +29,7 @@
 			document.getElementById(\"dniMod\").value='".$dni."';
 			document.getElementById(\"domicilioMod\").value='".$direccion."';
 			document.getElementById(\"telefonoMod\").value='".$telefono."';
+			document.getElementById(\"emailMod\").value='".$email."';
 		}
 		
 		llenarCampos();
@@ -61,6 +63,7 @@
 				<tr>
 					<td style="width:5px">Direcccion<input type="text" value="" name="domicilio" id="domicilioMod" /></td>
 					<td style="width:5px">Telefono<input type="text" value="" name="telefono" id="telefonoMod" /></td>
+					<td style="width:5px">Email<input type="text" value="" name="email" id="emailMod" /></td>
 				</tr>
 				<tr><td><input type="hidden" value="<?php echo($id); ?>" name="id" />
 						<INPUT TYPE="submit"  class="btn-primary"  value="Modificar"/></td>
@@ -126,6 +129,16 @@ if (isset($_POST['id'])){
 		}
 		else
 		{	$consulta = $consulta.",telefono='".$tele."'";}
+		
+	} 
+	if (!(empty($_POST['email']))){
+		$email=$_POST['email'];
+		if ($aux == 0){
+			$consulta = $consulta."email='".$email."'";
+			$aux=1;
+		}
+		else
+		{	$consulta = $consulta.",email='".$email."'";}
 		
 	} 
 	

@@ -3,12 +3,13 @@
 		function bu(){		
 				nombre=document.getElementById('nombre').value;
 				ap=document.getElementById('apellido').value;
-				combo=document.getElementById('combo');
-				 var rol=combo.options[combo.selectedIndex].value;
-				 console.log(rol);
-				var url ="abmusuario/displayBuscarUsuario.php?nombre="+nombre+"&apellido="+ap+"&rol="+rol;
-				console.log("ESTO ES LO QUE ENVIA"+url);
-                $("#contenidoUsuario").load(url);
+				rol=document.getElementById('combo').options[combo.selectedIndex].value;
+				//var rol=combo.options[combo.selectedIndex].value;
+				// console.log(rol);
+				 url ="abmusuario/displayBuscarUsuario.php?nombre="+nombre+"&apellido="+ap+"&rol="+rol;
+				//console.log("ESTO ES LO QUE ENVIA"+url);
+				
+        		 $("#contenidoUsuario").load(url);
 		}
 		/*function CargarAlta(){
 		 	  var url="abmUsuario/altasUsuario.php";
@@ -28,8 +29,6 @@
 	
 
 	?>
-	<h3> Profesionales </h3>
-	<hr />
 	<div class="row-fluid">
 		<div class="span12">
 			<div class="well">

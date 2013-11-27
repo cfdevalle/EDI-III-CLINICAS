@@ -1,12 +1,7 @@
-<HTML>
-<HEAD>
+
 <SCRIPT language= "JavaScript"type= "text/javascript" src="static/js/abmUsuario.js"></SCRIPT>
-</HEAD>
-<BODY>
-<BODY>			
 			
-			<h4>Datos De Usuario</h4>
-				<hr />
+
 				<form action="abmusuario/abmUsuario.php" method="post" id="formulario" name="cargo">
 					<table>
 					<tr><td><h5>Usuario</h5></td>
@@ -37,5 +32,3 @@
 				</table>
 			</form>
 	<!--</td><td><div id="error"></div>-->
-</BODY>
-</HTML>

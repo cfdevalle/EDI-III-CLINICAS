@@ -19,7 +19,7 @@ class CollectionUsuarios{
 		echo('</SELECT>');
 	}
 	public function getComboRol(){
-			 //usuario,password,nombre,apellido,rol
+			
 		$db=new DataBaseConnector();
 		$db->conectar();
 		$consulta='SELECT * FROM rol ';
@@ -56,10 +56,8 @@ class CollectionUsuarios{
 	}
 	
 	public function getTableUsuario($quey){
-		 //usuario,password,nombre,apellido,rol
-		$consulta=$quey;
-		//echo $consulta;
-		$result=mysql_query($consulta);
+	
+		$result=mysql_query($quey);
 		if (false === $result) {
 			echo mysql_error();
 		}
@@ -68,17 +66,18 @@ class CollectionUsuarios{
 		while($row = mysql_fetch_row($result)){?>
 			
 		<?php 
-				//echo('<TR><TD id="id_paciente">'.$row[0].'</TD><TD id="apellido">'.$row[2].'</TD><TD id="nombre">'.$row[1].'</TD></TR>');
-				echo('<TR><TD>'.$row[0].'</TD><TD>'.$row[1].'</TD><TD>'.$row[2].'</TD><TD>'.$row[3].'</TD><TD>'.$row[4].'</TD><TD>'.$row[5].'</TD><TD>'.$row[6].'</TD><TD>'.$row[7].'</TD><td><input type="button" value="Modificar" class="btn-primary" onclick="modificar('.$row[0].')" /></TD></TR>');
+				
+				echo('<TR><TD>'.$row[0].'</TD><TD>'.$row[1].'</TD><TD>'.$row[2].'</TD><TD>'.$row[3].'</TD><TD>'.$row[4].'</TD><TD>'.$row[5].'</TD><TD>'.$row[6].'</TD><TD>'.$row[7].'</TD><td><input type="button" value="Modificar" class="btn-primary" onclick="modificarU(\''.$row[0].'\')" /></TD></TR>');
 		}
-		//<TD><input type="button" value="Borrar" class="btn-primary" onclick="borrar('.$row[0].')" /> / 
+		
 		echo('</table>');
-}
+	}
 	
 	
 
+
 	
-	
+
 	
 }
 ?>

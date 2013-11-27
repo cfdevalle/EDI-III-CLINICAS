@@ -13,6 +13,7 @@
        			urls[9]="abmusuario/altasCargo.php";
 				urls[10]="abmusuario/AsignarCargo.php";
         	    urls[11]="abmpaciente/altas.php";
+				urls[12]="php/cambiarContr.php";
 				
 				
 				

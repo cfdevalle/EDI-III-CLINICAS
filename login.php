@@ -21,7 +21,8 @@ if (isset($_POST['selecRol'])){
 				while ($fila = mysql_fetch_row($resultado)){
 					
 					$otorgaTurno=$fila[0];
-					$_SESSION['rol']=$row[1];
+					$_SESSION['otorgaturno']=$fila[0];
+					$_SESSION['rol']=$fila[1];
 					
 					if ($otorgaTurno==1){
 				
@@ -68,6 +69,7 @@ session_start();
 			$rol = $row[7];
 			$vectorRol[$i]=$row[7];
 			$otorgaTurno = $row[8];
+			$_SESSION['otorgaturno'] = $row[8];
 			$_SESSION['rol']=$row[9];
 			$i++;
 	}

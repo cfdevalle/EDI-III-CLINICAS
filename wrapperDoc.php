@@ -1,5 +1,11 @@
 <?php
 	session_start();
+	
+	$estado=$_SESSION['otorgaturno'];
+	$rol=$_SESSION['rolNoLogin'];
+	if ($estado == 0 && $rol != "admin" && $rol != "sec"){
+		
+	
 ?>
 <HTML>
 <HEAD>
@@ -33,15 +39,7 @@
 		  <div class="row">
 		  	<div class="span12">		
     		<div class="well">
-						<ul class="nav pull-right">
-										<li>Bienvenido:<strong><?php echo $_SESSION['nombre'];echo(' ');echo $_SESSION['apellido']; ?></strong><br /></li>
-										<li>Usuario : <?php echo $_SESSION['usuario'];?></li>
-										<li><?php echo $_SESSION['rol'];?></li>
-										<li class="divider"><hr /></li>
-										<li style="text-align:right"><INPUT type="button" value="Cerrar Sesion" onClick="location='/EDII-III-CLINICAS/php/EliminarSesion.php';"/> </li>
-										
-										
-				    	</ul>
+						<?php  include("cuadroLogin.php")?>
 						<ul class="nav nav-tabs">
                                 <li><a href="#">Turnos Del Dia</a></li>
                                 <li><a href="javascript:irA(6);">Busqueda de Pacientes</a></li>
@@ -56,3 +54,9 @@
 
 </body> 
 </HTML>
+<?php 
+}else{
+	header("location: php/restringido.php");
+ }
+
+ ?>

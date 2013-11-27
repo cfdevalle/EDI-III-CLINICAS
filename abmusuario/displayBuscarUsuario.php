@@ -1,5 +1,5 @@
 <script>
-		function borrar(id){
+/*		function borrar(id){
 			console.log("id"+id);
 			var url="abmusuario/abmBorrarUsuario.php?id="+id;
 			window.location.href = url
@@ -7,15 +7,14 @@
 		function(respuesta){
 				var url ="abmusuario/displayBuscarUsuario.php";
                 $("#contenidoUsuario").load(url);
-	})
+	}
 		}
-		function modificar($id){
-		$.post( "abmpaciente/abmModificar.php",{id:$id},
-		function(respuesta){
-				var url ="abmpaciente/displayBuscarpaciente.php";
-                $("#contenidopacientes").load(url);
-	})	
-			//console.log("nombre"+$nombre);
+*/
+	function modificarU($id){
+			 console.log("id"+$id);
+		 	 var url="abmusuario/abmModificarUsuario.php?id="+$id;
+			 $("#contenidoUsuario").load(url);
+	
 		}
 </script>
 <?php
