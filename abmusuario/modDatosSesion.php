@@ -39,7 +39,7 @@
     $db->desconectar();
 ?>
 		    </hr>
-			<form action="abmusuario/abmModificarUsuario.php" method="post">
+			<form action="abmusuario/modDatosSesion.php" method="post">
 			<table>
 				<tr><td><h4>Modificar Datos</h4></td><td><h5>Usuario: <?php echo($usuario);?></h5></td></tr>
 				
@@ -133,15 +133,35 @@ if (isset($_POST['usr'])){
 	
 	$consulta=$consulta."  where usuario='".$_POST['usr']."'";
 	echo($consulta);
-	include '../domain/DataBaseConnector.php';
+	include 'domain/DataBaseConnector.php';
 	$db=new DataBaseConnector();
 	$db->conectar();
 	mysql_query($consulta);
 	$db->desconectar();
+	session_start();
+	$otorgaTurno=$_SESSION['otorgaturno'];
+	$rol=$_SESSION['rolNoLogin'];
 	
-	
-	header("Location: ../wrapperAdm.php");
+
+	if ( $rol === "admin" ){
+					header("location: ../wrapperAdm.php");
+	}
+	else{
+		if ($rol == "sec"){
+						header("location: ../wrapperSec.php");
+		}
+		else {
+				if ($otorgaTurno==1){
+							
+							header("location: ../wrapperDocTurnos.php");
+					}
+				else {
+							header("location: ../wrapperDoc.php");
+					}
+				}
+		}
 	
 	}
+
 	
 ?>

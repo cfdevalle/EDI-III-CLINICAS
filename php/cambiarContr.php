@@ -74,6 +74,7 @@ if (isset($_POST['usr'])){
 	mysql_query($consulta);
 	$db->desconectar();
 	$rol=$_SESSION['rolNoLogin'];
+	$otorgaTurno=$_SESSION['otorgaturno'];
 	if ( $rol === "admin" ){
 					header("location: ../wrapperAdm.php");
 	}
