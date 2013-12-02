@@ -21,7 +21,7 @@
 					<td><INPUT TYPE="text" id="txt_email" name="email" /></td><td><div id="errorE"></div></td>
 					</tr>
 					<tr>
-					<td><INPUT TYPE="button"  class="btn-primary"  value="Alta" onClick="alta();"/></td><td><div id="error"></div></td>
+					<td><INPUT TYPE="button"  class="btn-primary"  value="Siguiente" onClick="alta();"/></td><td><div id="error"></div></td>
 					</tr>
 				</table>
 			</form>

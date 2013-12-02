@@ -32,6 +32,6 @@
 		$response="Se inserto: ".$id;
 	}
 	
-	header("location: ../wrapperSec.php");
+	header("location: ../wrapperSec.php?hc=".$id."&nombre='".$nombre."'&apellido='".$apellido."'&dni='".$dni."'");
 	//echo $response;
 ?>

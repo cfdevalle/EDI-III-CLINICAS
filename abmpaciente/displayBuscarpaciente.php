@@ -21,20 +21,20 @@
 		$response="";
 		$consulta="SELECT * FROM paciente";
 		if (!(empty($_GET['dni']))){
-			$consulta=$consulta." WHERE dni like ".$_GET["dni"]."";
+			$consulta=$consulta." WHERE dni like '".$_GET["dni"]."%'";
 		}
 		if (!(empty($_GET['nombre']))){
 			if (strlen($consulta)<=22){
-				$consulta=$consulta." WHERE nombre like \"".$_GET["nombre"]."\"";
+				$consulta=$consulta." WHERE nombre like '".$_GET["nombre"]."%'";
 			}else{
-				$consulta=$consulta." AND nombre like \"".$_GET["nombre"]."\"";
+				$consulta=$consulta." AND nombre like '".$_GET["nombre"]."%'";
 			}
 		}
 		if (!(empty($_GET['apellido']))){
 			if (strlen($consulta)<=22){
-				$consulta=$consulta." WHERE apellido like \"".$_GET["apellido"]."\"";
+				$consulta=$consulta." WHERE apellido like \"".$_GET["apellido"]."%\"";
 			}else{
-				$consulta=$consulta." AND apellido like \"".$_GET["apellido"]."\"";
+				$consulta=$consulta." AND apellido like \"".$_GET["apellido"]."%\"";
 			}
 		}
 		

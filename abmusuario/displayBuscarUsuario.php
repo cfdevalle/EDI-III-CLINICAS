@@ -26,13 +26,13 @@
 		$consulta="SELECT u.* ,r.rol FROM usuario u,usuario_rol r ";
 		
 		if (!(empty($_GET['nombre']))){
-			$consulta=$consulta." WHERE u.nombre=  '".$_GET["nombre"]."' AND u.usuario=r.usuario";
+			$consulta=$consulta." WHERE u.nombre like  '".$_GET["nombre"]."%' AND u.usuario=r.usuario";
 		}
 		if (!(empty($_GET['apellido']))){
 			if (strlen($consulta)<=49){
-				$consulta=$consulta." WHERE u.apellido= '".$_GET["apellido"]."' AND u.usuario=r.usuario";
+				$consulta=$consulta." WHERE u.apellido like '".$_GET["apellido"]."%' AND u.usuario=r.usuario";
 			}else{
-				$consulta=$consulta." AND u.apellido=  '".$_GET["apellido"]."'";
+				$consulta=$consulta." AND u.apellido like  '".$_GET["apellido"]."%'";
 			}
 		}
 		if (!(empty($_GET['rol']))){

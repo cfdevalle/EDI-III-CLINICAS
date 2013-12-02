@@ -15,6 +15,7 @@
         	    urls[11]="abmpaciente/altas.php";
 				urls[12]="php/cambiarContr.php";
 				urls[13]="abmusuario/modDatosSesion.php";
+				urls[14]="abmpaciente/abmHc.php";
 				
 				
 				

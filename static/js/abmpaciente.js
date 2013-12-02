@@ -45,6 +45,8 @@ function alta(){
 			document.getElementById('errorE').innerHTML = '';
 			form=document.getElementById('formulario');
 			form.submit();
+			var url ="abmpaciente/displayBuscarpaciente.php";
+        	$("#contenidopacientes").load(url);
 			//enviarDato(nom,ape,dni,dom,tele);
 			
 		

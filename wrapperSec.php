@@ -58,15 +58,15 @@
                         
         </div>
      </div>
-	 <?php if(isset($_GET['ver'])){
-		if ($_GET['ver'] == 'pac'){?>
+	 <?php if(isset($_GET['hc'])){
+		?>
 		<script>
-			irA2(6);
+			  $("#div_screen").load("abmpaciente/abmHc.php?hc="+<?php echo($_GET['hc']) ?>+"&nom="+<?php echo($_GET['nombre']) ?>+"&ap="+<?php echo($_GET['apellido']) ?>+"&dni="+<?php echo($_GET['dni']) ?> ) ;
 			
 		</script>
 		<?php
+		
 		}
-}
 ?>
 
 </body> 
